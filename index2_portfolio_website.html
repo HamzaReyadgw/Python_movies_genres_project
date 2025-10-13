@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza Reyad | Data Analyst</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: radial-gradient(circle at bottom, #050505 0%, #000000 100%);
+      color: #e8f5ff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ستار كوفر - نجوم */
+    #star-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .star {
+      width: 2px;
+      height: 2px;
+      background: white;
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: twinkle 3s infinite ease-in-out;
+      box-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.15; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.6); }
+    }
+
+    /* محتوى الصفحة */
+    .container {
+      position: relative;
+      z-index: 2; /* فوق النجوم */
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #00bfff;
+      text-shadow: 0 0 12px rgba(0,191,255,0.25);
+      letter-spacing: 0.5px;
+    }
+    header p {
+      color: #cfeeff;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+
+    section {
+      margin-top: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00bfff;
+      margin-bottom: 14px;
+      text-shadow: 0 0 10px rgba(0,191,255,0.08);
+      font-size: 1.3rem;
+    }
+
+    /* ABOUT / SKILLS */
+    #about p {
+      text-align: center;
+      line-height: 1.6;
+      color: #dff6ff;
+      margin-bottom: 14px;
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .skill {
+      background: rgba(0,191,255,0.08);
+      color: #bfeeff;
+      padding: 8px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,191,255,0.12);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .project {
+      background: rgba(255,255,255,0.03);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.25s ease, background 0.25s;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project:hover {
+      transform: translateY(-6px);
+      background: rgba(0,191,255,0.08);
+    }
+    .project h3 {
+      color: #eaffff;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .project .links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: rgba(0,191,255,0.12);
+      color: #e8fbff;
+      border: 1px solid rgba(0,191,255,0.18);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .btn:hover { background: #00bfff; color: #001; }
+
+    /* CONTACT */
+    #contact p {
+      text-align: center;
+      margin: 6px 0;
+      color: #dff6ff;
+    }
+    #contact a { color: #bff6ff; font-weight: 600; text-decoration: none; }
+
+    footer {
+      text-align: center;
+      margin-top: 26px;
+      color: #bcdff0;
+      font-size: 0.9rem;
+    }
+
+    /* responsive */
+    @media (max-width: 520px) {
+      header h1 { font-size: 1.8rem; }
+      .project { min-height: 110px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- نجوم -->
+  <div id="star-container"></div>
+
+  <div class="container">
+    <header>
+      <h1>Hamza Reyad | Data Analyst</h1>
+      <p>Turning data into insights — Python • SQL • Power BI</p>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm a passionate Data Analyst focused on transforming raw data into valuable insights. I enjoy cleaning messy datasets, and creating clear interactive dashboards that tell a story.</p>
+
+      <div class="skills-list" aria-hidden="false">
+        <span class="skill">Python</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">SQL (MySQL)</span>
+        <span class="skill">Matplotlib</span>
+        <span class="skill">Excel</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">Tableau</span>
+        <span class="skill">Web Scraping</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>My Projects</h2>
+
+      <div class="projects">
+        <div class="project">
+          <div>
+            <h3>Control and Trial Stores Project</h3>
+            <p>Analysis & reporting for retail stores (PDF report).</p>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/job_sim2_full.pdf" target="_blank" rel="noopener">View Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div>
+            <h3>USA 2015 Flights Analysis</h3>
+            <p>Large-scale flight delays & cancellations analysis — Python & SQL work.</p>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/flights.ipynb%20%282%29%20-%20JupyterLab.pdf" target="_blank" rel="noopener">Python Notebook (PDF)</a>
+            <a class="btn" href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/flights_2015_sql_query.sql" target="_blank" rel="noopener">SQL Queries</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div>
+            <h3>Movies Genres</h3>
+            <p>Python project for analyzing movie genres and patterns.</p>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/movies_genre%20%281%29.py" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </div>
+<div class="project">
+  <div>
+    <h3>Examples of Dashboards</h3>
+    <a href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/Screenshot%202025-10-06%20083311%20(2).zip" target="_blank">View File</a>
+  </div>
+</div>
+
+<div class="project">
+  <div>
+    <h3>Web Scraping</h3>
+    <a href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/Web%20scraping%20.pdf" target="_blank">View Code</a>
+  </div>
+</div>
+
+  <div class="project">
+  <div>
+    <h3>Food Marketing</h3>
+    <a href="https://github.com/HamzaReyadgw/Python_movies_genres_project/blob/main/u_foodmarketing.pdf" target="_blank" rel="noopener">View Code</a>
+  </div> 
+</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:hamzareyad5@gmail.com">hamzareyad5@gmail.com</a></p>
+      <p>Phone: <a href="tel:+201026546842">+20 102 654 6842</a></p>
+    </section>
+
+    <footer>
+      <p>© 2025 Hamza Reyad. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // إنشاء نجوم متحركة عشوائية داخل الـ container
+    const container = document.getElementById('star-container');
+    const numStars = 160;
+    const ww = window.innerWidth;
+    const wh = window.innerHeight;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      // عشوائي الموقع والحجم والمدة
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const size = 1 + Math.random() * 2; // 1 - 3 px
+      const delay = Math.random() * 3;
+      const duration = 2 + Math.random() * 3;
+
+      star.style.top = top + '%';
+      star.style.left = left + '%';
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.animationDelay = delay + 's';
+      star.style.animationDuration = duration + 's';
+      container.appendChild(star);
+    }
+
+    // إعادة توزيع النجوم عند تغيير حجم النافذة (خفة بالعرض)
+    window.addEventListener('resize', () => {
+      // غير ضروري إعادة رسم كامل لكن نحتفظ بالبساطة الحالية
+    });
+  </script>
+</body>
+</html>
